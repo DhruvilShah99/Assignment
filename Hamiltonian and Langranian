@@ -1,31 +1,22 @@
-package prog2;
-import java.util.*;
-import java.util.Scanner;
-public class prg2 {
-	 public static void main(String args[] ) throws Exception {
-	       Scanner sc=new Scanner(System.in);
-	       int n=sc.nextInt();
-	       int arr[]=new int[n];
-	       for(int i=0;i<n;i++)
-	       {
-	    	   arr[i]=sc.nextInt();
-	       }
-	       int temp=0;
-	       for(int i=0;i<n;i++)
-	       {
-	    	   temp=0;
-	    	   for(int j=i+1;j<n;j++)
-	    	   {
-	    		   if(arr[i]<arr[j])
-	    		   {
-	    			   temp=1;
-	    			   break;
-	    			   
-	    		   }
-	    	   }
-	    	   if(temp==0)
-	    	   System.out.println(arr[i]+" ");
-	    	   
-	       }
+#include<stdio.h>
+ 
+void main()
+{
+int n;
+scanf("%d",&n);
+int a[n],count=0;
+for(int i=0;i<n;i++)
+scanf("%d",&a[i]);
+for(int i=0;i<n-1;i++)
+{
+count = n-1-i;
+for(int j=i+1;j<n;j++)
+{
+if(a[i]>=a[j]) count=count - 1;
+else break;
 }
+if(count == 0)
+printf("%d ",a[i]);
+}
+printf("%d",a[n-1]);
 }
